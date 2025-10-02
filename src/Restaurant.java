@@ -25,18 +25,20 @@ public class Restaurant {
                 client.valeurFacture += 2;
             }
         }
+
+        // Sauvegarde du type de café existant avant ajout
+        TypeCafe typeCafeExistant = (client.tasse.cafe != null) ? client.tasse.cafe.typeCafe : null;
+
         // Ajout du café dans la tasse
         cafetiere.remplirTasse(client.tasse, client.commandeCafe.typeCafe, client.commandeCafe.quantiteLiquideMl);
 
-        // Vérification du conflit de type (seulement si café existe dans la tasse)
-        if (client.tasse.cafe != null && client.tasse.cafe.typeCafe != client.commandeCafe.typeCafe) {
+        // Vérification du conflit de type après ajout
+        if (typeCafeExistant != null && typeCafeExistant != client.commandeCafe.typeCafe) {
             client.tasse.cafe.typeCafe = TypeCafe.BATARD;
             client.valeurFacture = 0;
             System.out.println("Dégage de mon restaurant !");
             return 0;
         }
-
-
 
         // Vérification de la quantité de café
         if (client.commandeCafe.quantiteLiquideMl > client.tasse.quantiteCafeMax) {
@@ -46,5 +48,4 @@ public class Restaurant {
         this.profit += client.valeurFacture;
         return client.valeurFacture;
     }
-
 }

@@ -1,7 +1,7 @@
 public class Client {
     Tasse tasse;
     Cafe commandeCafe;
-    private String nom;
+    String nom;
     float valeurFacture;
 
     Client(String nom, Cafe commandeCafe, boolean avecTasse) {

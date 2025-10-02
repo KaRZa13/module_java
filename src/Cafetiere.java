@@ -6,7 +6,7 @@ public class Cafetiere {
         tasse.cafe.quantiteLiquideMl = tasse.quantiteCafeMax;
     }
 
-    public void remplirTasse(Tasse tasse, TypeCafe typeCafe, double quantite) {
+    public void remplirTasse(Tasse tasse, TypeCafe typeCafe, float quantite) {
         tasse.cafe.typeCafe = typeCafe;
         tasse.cafe.quantiteLiquideMl = quantite;
     }

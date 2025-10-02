@@ -4,12 +4,12 @@ public class Tasse {
 
     public Tasse() {
         this.quantiteCafeMax = 100;
-        this.cafe = null;
+        this.cafe = new Cafe();
     }
 
     public Tasse(float quantiteCafeMax) {
         this.quantiteCafeMax = quantiteCafeMax;
-        this.cafe = null;
+        this.cafe = new Cafe();
     }
 
     public void boire(double quantite) {
