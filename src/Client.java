@@ -7,7 +7,6 @@ public class Client {
     Client(String nom, Cafe commandeCafe, boolean avecTasse) {
         this.nom = nom;
         this.commandeCafe = commandeCafe;
-        this.valeurFacture = 0;
 
         if (avecTasse) {
             this.tasse = new Tasse(100);
@@ -17,11 +16,14 @@ public class Client {
     }
 
     Client(String nom, Cafe commandeCafe, Tasse tasse) {
-        this(nom, commandeCafe, true);
+        this.nom = nom;
+        this.commandeCafe = commandeCafe;
+        this.tasse = tasse;
     }
 
     Client() {
-        this("Jean", new Cafe(TypeCafe.MOKA, 100), true);
+        this.nom = "Jean";
+        this.tasse = new Tasse(100);
     }
 
     public String getNom() {
